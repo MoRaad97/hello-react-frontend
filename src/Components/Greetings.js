@@ -5,21 +5,16 @@ import { loadGreeting } from '../Redux/Greetings_Reducer'
 const Greeting = () => {
   const dispatch = useDispatch();
 
-  const randomGreetings = () => {
-    dispatch(loadGreeting());
-  }
-
   useEffect(() => {
-    randomGreetings()
+    dispatch(loadGreeting());
   }, [])
 
-  const { greeting } = useSelector((state) => state.greetings)
+  const greeting = useSelector((state) => state.greetings)
 
   return (
     <div>
-
       <p>{greeting}</p>
-      <button onClick={() => randomGreetings()}>Generate New Greeting</button>
+      <button onClick={() => dispatch(loadGreeting())}>Generate New Greeting</button>
     </div>
   )
 }
