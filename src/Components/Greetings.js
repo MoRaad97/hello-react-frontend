@@ -14,7 +14,7 @@ const Greeting = () => {
   return (
     <div>
       <p>{greeting}</p>
-      <button onClick={() => dispatch(loadGreeting())}>Generate New Greeting</button>
+      <button type='button' onClick={() => dispatch(loadGreeting())}>Generate New Greeting</button>
     </div>
   )
 }
